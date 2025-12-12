@@ -1,0 +1,58 @@
+@page
+@model TrackFit.Pages.Workouts.CreateModel
+
+@{
+    ViewData["Title"] = "Create Workout";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="mb-0">Create Workout</h1>
+        <a asp-page="./Index" class="btn btn-outline-secondary">Back to List</a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Workout.WorkoutDate" class="form-label"></label>
+                        <input asp-for="Workout.WorkoutDate" class="form-control" />
+                        <span asp-validation-for="Workout.WorkoutDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Workout.Duration" class="form-label"></label>
+                        <input asp-for="Workout.Duration" class="form-control" />
+                        <span asp-validation-for="Workout.Duration" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Workout.WorkoutType" class="form-label"></label>
+                        <input asp-for="Workout.WorkoutType" class="form-control" />
+                        <span asp-validation-for="Workout.WorkoutType" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="Workout.IntensityLevel" class="form-label"></label>
+                        <input asp-for="Workout.IntensityLevel" class="form-control" />
+                        <span asp-validation-for="Workout.IntensityLevel" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label asp-for="Workout.Notes" class="form-label"></label>
+                        <textarea asp-for="Workout.Notes" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="Workout.Notes" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-page="./Index" class="btn btn-secondary ms-2">Back to List</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

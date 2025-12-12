@@ -1,0 +1,59 @@
+@page
+@model TrackFit.Pages.Exercises.CreateModel
+
+@{
+    ViewData["Title"] = "Create Exercise";
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h2 class="mb-4">Create Exercise</h2>
+
+        <form method="post">
+            <div class="mb-3">
+                <label asp-for="Exercise.ExerciseName" class="form-label">
+                    Type of Exercise
+                </label>
+                <input asp-for="Exercise.ExerciseName" class="form-control" />
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Exercise.Sets" class="form-label"></label>
+                    <input asp-for="Exercise.Sets" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Exercise.Reps" class="form-label"></label>
+                    <input asp-for="Exercise.Reps" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Exercise.Weight" class="form-label"></label>
+                    <input asp-for="Exercise.Weight" class="form-control" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Exercise.ExerciseNotes" class="form-label"></label>
+                <textarea asp-for="Exercise.ExerciseNotes" class="form-control"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Exercise.WorkoutId" class="form-label">
+                    Workout
+                </label>
+                <select asp-for="Exercise.WorkoutId"
+                        class="form-select"
+                        asp-items="Model.WorkoutOptions">
+                    <option value="">Select a workout</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create</button>
+            <a asp-page="Index" class="btn btn-secondary ms-2">
+                Back to List
+            </a>
+        </form>
+    </div>
+</div>

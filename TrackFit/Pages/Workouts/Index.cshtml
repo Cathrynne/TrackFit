@@ -1,0 +1,50 @@
+@page
+@model TrackFit.Pages.Workouts.IndexModel
+
+@{
+    ViewData["Title"] = "Workouts";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>Workouts</h1>
+
+        <!-- FIXED: absolute route -->
+        <a asp-page="/Workouts/Create" class="btn btn-primary">
+            Create New Workout
+        </a>
+    </div>
+
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Date</th>
+                <th>Duration</th>
+                <th>Workout Type</th>
+                <th>Intensity</th>
+                <th>Notes</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var item in Model.Workout)
+        {
+            <tr>
+                <td>@item.WorkoutDate.ToShortDateString()</td>
+                <td>@item.Duration</td>
+                <td>@item.WorkoutType</td>
+                <td>@item.IntensityLevel</td>
+                <td>@item.Notes</td>
+                <td class="text-nowrap">
+                    <a asp-page="/Workouts/Edit" asp-route-id="@item.WorkoutId">Edit</a> |
+                    <a asp-page="/Workouts/Details" asp-route-id="@item.WorkoutId">Details</a> |
+                    <a asp-page="/Workouts/Delete" asp-route-id="@item.WorkoutId">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,55 @@
+@page
+@model TrackFit.Pages_Exercises.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Exercise</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Exercise.ExerciseName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Exercise.ExerciseName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Exercise.Sets)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Exercise.Sets)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Exercise.Reps)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Exercise.Reps)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Exercise.Weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Exercise.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Exercise.ExerciseNotes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Exercise.ExerciseNotes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Exercise.Workout)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Exercise.Workout.IntensityLevel)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Exercise.ExerciseId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

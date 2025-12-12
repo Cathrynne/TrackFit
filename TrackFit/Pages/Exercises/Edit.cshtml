@@ -1,0 +1,63 @@
+@page
+@model TrackFit.Pages_Exercises.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Exercise</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Exercise.ExerciseId" />
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Exercise.ExerciseName" class="control-label"></label>
+                <input asp-for="Exercise.ExerciseName" class="form-control" />
+                <span asp-validation-for="Exercise.ExerciseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="Exercise.Sets" class="control-label"></label>
+                <input asp-for="Exercise.Sets" class="form-control" />
+                <span asp-validation-for="Exercise.Sets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="Exercise.Reps" class="control-label"></label>
+                <input asp-for="Exercise.Reps" class="form-control" />
+                <span asp-validation-for="Exercise.Reps" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="Exercise.Weight" class="control-label"></label>
+                <input asp-for="Exercise.Weight" class="form-control" />
+                <span asp-validation-for="Exercise.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="Exercise.ExerciseNotes" class="control-label"></label>
+                <input asp-for="Exercise.ExerciseNotes" class="form-control" />
+                <span asp-validation-for="Exercise.ExerciseNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="Exercise.WorkoutId" class="control-label"></label>
+                <select asp-for="Exercise.WorkoutId" class="form-control" asp-items="ViewBag.WorkoutId"></select>
+                <span asp-validation-for="Exercise.WorkoutId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
